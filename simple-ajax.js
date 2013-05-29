@@ -6,16 +6,25 @@
  * Released under the MIT license
  */
  
- var ajax = {
-  get   :   function(url,callback) {
-        var request = new XMLHttpRequest();
-        request.open("GET", url);
-            request.onreadystatechange = function() {
-		if (request.readyState == 4 && request.status == 200) {
-               callback(request.responseText);
-             }
-          }
-            request.send(null);
+var ajax = {
+  _createRequest: function() {
+	 try { 
+	   return new window.XMLHttpRequest(); 
+	   } catch( e ) {} },
+  get   :   function(url, callback) {
+    var $_ = this._createRequest();
+      $_.open("GET", url);
+      $_.onreadystatechange = function() {
+		 if ($_.readyState == 4 && $_.status == 200) {
+           callback($_.responseText);
+		 }
        }
-   }
- 
+	$_.send(null);
+  },
+  post  :  function(url, data, callback) {
+	  
+	  
+  }
+}
+
+
