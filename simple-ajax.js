@@ -6,20 +6,46 @@
  * Released under the MIT license
  */
  
-var ajax = {
-  _createRequest  :  function() {
-	 try { 
-	   return new window.XMLHttpRequest(); 
-	   } catch( e ) {} },
-  get   :   function(url, callback) {
-    var $_ = this._createRequest();
-      $_.open("GET", url);
-      $_.onreadystatechange = function() {
-		 if ($_.readyState == 4 && $_.status == 200) {
-           callback($_.responseText);
-		 }
+function _createRequest() {
+	if(window.XMLHttpRequest === undefined) {
+	  window.XMLHttpRequest = function() {
+		try {
+		  return new ActiveXObject("Msxml2.XMLHTTP.6.0");
+			 } catch( $_ ) {
+		try {
+			return new ActiveXObject("Msxml2.XMLHTTP.3.0"); 
+			} catch ( $__ ) { }
+		  }
+		}
+	}else {
+        try { 
+	        return new window.XMLHttpRequest(); 
+	     } catch( $___ ) {} 
        }
-	$_.send(null);
+	 }; 
+  function encodeData(data) {
+	  if(!data) return '';
+	  var mass = [];
+	   for(var name in data) {
+		   if(!data.hasOwnProperty(name)) continue;
+		   if(typeof data[name] === 'function') continue;
+		   var value = data[name].toString();
+		   name = encodeURIComponent(name.replace("%20", "+"));
+		   value = encodeURIComponent(value.replace("%20", "+"));
+		     mass.push(name + "=" + value);
+	   }
+	        return mass.join('&'); 
+  };	 
+var ajax = {
+  get   :   function(url, callback) {
+    var $ = _createRequest(); 
+      $.open("GET", url);
+      $.onreadystatechange = function() {
+		 if ($.readyState === 4 && $.status === 200) {
+           callback($.responseText);
+		 }; 
+	   }
+	 $.send(null);
   },
   post  :  function(url, data, callback) {
 	  
