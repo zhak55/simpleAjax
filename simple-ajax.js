@@ -7,7 +7,7 @@
  */
  
 var ajax = {
-  _createRequest: function() {
+  _createRequest  :  function() {
 	 try { 
 	   return new window.XMLHttpRequest(); 
 	   } catch( e ) {} },
