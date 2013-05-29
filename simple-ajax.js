@@ -40,11 +40,18 @@ var ajax = {
     var $ = _createRequest(); 
       $.open("GET", url);
       $.onreadystatechange = function() {
-        if ($.readyState === 4 && $.status === 200) {
-          callback($.responseText);
-         }; 
-       }
-    $.send(null);
+		 if ($.readyState === 4 && $.status === 200) {
+			var getType = $.getResponseHeader("Content-Type");
+		if(getType.indexOf('xml') !== -1 && $.responseXML) {
+           callback($.responseXML);
+		}else if(getType === "application/json") {
+		   callback(JSON.parse($.responseText));
+		}else {
+		   callback($.responseText);
+		    }
+		 }; 
+	   }
+	 $.send(null);
   },
   post  :  function(url, data, callback) {
 	  
