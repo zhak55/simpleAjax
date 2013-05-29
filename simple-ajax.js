@@ -1,6 +1,6 @@
 /*!
  * Simple Ajax Plugin v1.0
- * https://github.com/
+ * https://github.com/zhak55/simpleAjax
  *
  * Copyright 2013 Roman Zhak
  * Released under the MIT license
