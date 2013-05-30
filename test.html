@@ -1,5 +1,15 @@
-ajax.get('test.html', function(response) 
-    { if(response) { 
+<script type="text/javascript">
+//get data
+ajax.get('test.html', function(response) { 
+    if(response) { 
         alert(response); 
       }
+   });
+//post data
+ajax.post('test.php', { name: 'Roman', age: 19 }, function(response) {
+    if(response) {
+        alert('Sent!');
    }
+});
+</script>
+   
