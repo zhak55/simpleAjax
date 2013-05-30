@@ -61,10 +61,16 @@ var ajax = {
 	   }
 	 $.send(null);
   },
-  post  :  function(url, data, callback) {
-	  
-	  
+   post  :  function(url, data, callback) {
+	var _ =  _createRequest(); 
+	 _.open("POST", url);
+	 _.onreadystatechange = function() {
+		 if ($.readyState === 4 && callback) {
+	callback(_);
+		 };
+		 _setRequestHeader('Content-Type', 
+		              'application/x-www-form-urlencoded');
+		 _send(encodeData(data));
+     }	  
   }
 }
-
-
