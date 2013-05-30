@@ -22,6 +22,14 @@ function _createRequest() {
 	 } catch( $___ ) {} 
        }
      }; 
+function getKey() { // if you need to provide a unique request
+  var i;
+  var key = '';
+  for (i=0; i < 7; i++) {
+  	key += Math.floor(Math.random() * 20).toString(16);
+     }
+    return key;
+  }
 function encodeData(data) {
   if(!data) return '';
   var mass = [];
