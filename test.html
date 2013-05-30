@@ -11,7 +11,15 @@ ajax.post('test.php', { name: 'Roman', age: 19 }, function(response) {
         alert('Sent!');
    }
 });
-// { name: 'Roman', age: 19 } => test.php?name=Roman&age=19
-//
+// { name: 'Roman', age: 19 } => name=Roman&age=19 
+// use function ajax.encodeData(data); in order to encode into string.
+
+//by the way, sometimes it will be uselful to post data by ajax.get();
+
+ajax.get('test.php' + '?' + this.encodeData({ user: 'zhak55', id: 1 }), function(r) {
+    if(r) {
+        document.getElementById('test').innerHTML = r;
+    }
+});
 </script>
    
