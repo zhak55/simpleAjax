@@ -1,0 +1,77 @@
+[
+  {
+    "name": "plot",
+    "description": "- plots",
+    "value": "plot",
+    "tokens": [
+      "plot"
+    ]
+  },
+  {
+    "name": "solve",
+    "description": "- roots",
+    "value": "solve",
+    "tokens": [
+      "solve"
+    ]
+  },
+  {
+    "name": "derivative",
+    "description": "- ",
+    "value": "derivative",
+    "tokens": [
+      "derivative"
+    ]
+  },
+  {
+    "name": "integration",
+    "description": "- integrate",
+    "value": "integration",
+    "tokens": [
+      "integration"
+    ]
+  },
+  {
+    "name": "help",
+    "description": "- help",
+    "value": "help",
+    "tokens": [
+      "help"
+    ]
+  },
+  {
+    "name": "derivative sin(x) + cos(x)",
+    "description": "",
+    "value": "derivative sin(x) + cos(x)",
+    "tokens": [
+      "derivative",
+      "sin(x)",
+      "cos(x)"
+    ]
+  },
+  {
+    "name": "solve x^3=1",
+    "description": "",
+    "value": "solve x^3=1",
+    "tokens": [
+      "x",
+      "solve x^3=1"
+    ]
+  },
+  {
+    "name": "log",
+    "description": "- log",
+    "value": "log",
+    "tokens": [
+      "log"
+    ]
+  },
+  {
+    "name": "trigonometry",
+    "description": "",
+    "value": "trigonometry",
+    "tokens": [
+      "trigonometry"
+    ]
+  }
+]
