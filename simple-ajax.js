@@ -65,7 +65,7 @@ var ajax = {
 	var _ =  _createRequest(); 
 	 _.open("POST", url);
 	 _.onreadystatechange = function() {
-		 if ($.readyState === 4 && callback) {
+		 if (_.readyState === 4 && callback) {
 	callback(_);
 		 };
 		 _setRequestHeader('Content-Type', 
