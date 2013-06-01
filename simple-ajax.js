@@ -8,7 +8,6 @@
  
 (function(w) {
  var isOpera = Object.prototype.toString.call(w.opera) == '[object Opera]';
- alert(isOpera);
 function _createRequest() {
   if(w.XMLHttpRequest === undefined) {
     w.XMLHttpRequest = function() {
@@ -46,7 +45,7 @@ function encodeData(data) {
    }
 return mass.join('&'); 
   };	 
-var ajax = {
+ajax = {
   get   :   function(url, callback) {
     var $ = _createRequest(); 
       $.open("GET", url);
@@ -72,9 +71,10 @@ var ajax = {
 	        callback(true);
 		 }
 	  }
-	_.setRequestHeader('Content-Type', 
+		 _.setRequestHeader('Content-Type', 
 		              'application/x-www-form-urlencoded');
-	_.send(encodeData(data));	  
+		 _.send(encodeData(data));
+	  
     }
   }
 })(window);
