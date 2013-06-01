@@ -74,8 +74,7 @@ var ajax = {
 	  }
 	_.setRequestHeader('Content-Type', 
 		              'application/x-www-form-urlencoded');
-	_.send(encodeData(data));
-	  
+	_.send(encodeData(data));	  
+    }
   }
-}
 })(window);
