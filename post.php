@@ -2,7 +2,7 @@
 // ajax.post('post.php', { name: 'Roman', age: 19 }, function(r) {
 // if(r) {
 //    alert(r); }
-// }):
+// });
 <?php
 
  $name = $_REQUEST['name'];
