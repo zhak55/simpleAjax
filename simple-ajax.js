@@ -6,9 +6,12 @@
  * Released under the MIT license
  */
  
+(function(w) {
+ var isOpera = Object.prototype.toString.call(w.opera) == '[object Opera]';
+ alert(isOpera);
 function _createRequest() {
-  if(window.XMLHttpRequest === undefined) {
-    window.XMLHttpRequest = function() {
+  if(w.XMLHttpRequest === undefined) {
+    w.XMLHttpRequest = function() {
        try { return new ActiveXObject("Msxml2.XMLHTTP.6.0");
 	} catch( $_ ) {
 	  try {
@@ -18,7 +21,7 @@ function _createRequest() {
       }
      }else {
         try { 
-	  return new window.XMLHttpRequest(); 
+	  return new w.XMLHttpRequest(); 
 	 } catch( $___ ) {} 
        }
      }; 
@@ -62,7 +65,7 @@ var ajax = {
 	 $.send(null);
   },
   post  :  function(url, data, callback) {
-	var _ =  new XMLHttpRequest();
+	var _ =  _createRequest(); 
 	 _.open("POST", url);
       _.onreadystatechange = function() {
 		 if (_.readyState === 4 && _.status === 200) {
@@ -75,3 +78,4 @@ var ajax = {
 	  
   }
 }
+})(window);
