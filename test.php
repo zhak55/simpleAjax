@@ -19,11 +19,13 @@ ajax.post('post.php', { name: 'Roman', age: 19 }, function(response) {
 
 //by the way, sometimes it will be uselful to post data by ajax.get();
 
-ajax.get('test.php' + '?' + encodeData({ user: 'zhak55', id: 1 }), function(r) {
+window.onload = function() {
+  ajax.get('test.php' + '?' + encodeData({ user: 'zhak55', id: 1 }), function(r) {
     if(r) {
         document.getElementById('test').innerHTML = r;
     }
-});
+ });
+}
 </script>
  </head>
  <body>
