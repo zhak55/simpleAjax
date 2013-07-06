@@ -3,7 +3,7 @@ var randColor = {
   rV  :  function(val) {
 		return Math.floor(Math.random() * val);
 	},
-   get  :  function() {
+  get :  function() {
          var r = this.rV(255).toString(16);
 	     if(r.length < 2)
 			r = "0" + r;
