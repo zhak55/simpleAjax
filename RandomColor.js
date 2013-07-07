@@ -16,3 +16,5 @@ var randColor = {
       return "#" + r + g + b;
    }
 } 
+
+var color = randColor.get(); // to get random colour
