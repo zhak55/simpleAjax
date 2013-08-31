@@ -19,11 +19,11 @@
 		
        // define formats that browser supports
        isSupported  =  (function() {
-		try { 
+       try { 
          for( var i = 0; i < formats.length; i++) {
           if(audioElement.canPlayType(formats[i]) == "") continue;
             arraySupported.push(formats[i]); }
-		} catch(e) {}
+         } catch(e) {}
            return arraySupported; })(),
 
        // try to define the current browser
