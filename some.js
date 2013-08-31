@@ -1,12 +1,13 @@
 (function( window, undefined ) {
 	
    var 
-        startUrl = null,
-          document = window.document, 
-          audioElement = document.createElement('audio'), 
-          arraySupported = new Array(),
-          playlist = {},
+        startUrl = null
+          , document = window.document 
+          , audioElement = document.createElement('audio') 
+          , arraySupported = new Array()
+          , playlist = {},
 		  
+		
         // supporting by your browser
         audioSupported = !!audioElement.canPlayType,
 		
@@ -21,7 +22,23 @@
          for( var i = 0; i < formats.length; i++) {
           if(audioElement.canPlayType(formats[i]) == "") continue;
             arraySupported.push(formats[i]); }
-           return arraySupported; })()
+           return arraySupported; })(),
+
+       // try to define the current browser
+       browser = function() {
+         var ua = navigator.userAgent.toLowerCase();
+		 
+         var webkit  =  /(webkit)[ \/]([\w.]+)/
+             , opera = /(opera)(?:.*version)?[ \/]([\w.]+)/
+             , msie  = /(msie) ([\w.]+)/
+             , mozilla = /(mozilla)(?:.*? rv:([\w.]+))?/
+             , mobiles = /(ipad|iphone|ipod|android|blackberry|windows ce)/;
+		   
+        var matches = webkit.exec( ua ) || opera.exec( ua ) ||
+                         msie.exec ( ua ) || mozilla.exec ( ua ) || mobiles.exec ( ua )
+        || [];
+               return { browser : matches[1] || "none", version : matches[2] || "0" };
+        };
 	
 
 
