@@ -94,7 +94,3 @@ var _smartPlayer =
  window.smartPlayer = _smartPlayer;
 
 })( window );
-		  
- window.smartPlayer = _smartPlayer;
-
-})( window );
