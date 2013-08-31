@@ -9,7 +9,7 @@
 		  
 		
         // supporting by your browser
-        audioSupported = !!audioElement.canPlayType,
+        audioSupported = !!audioElement.canPlayType || undefined ,
 		
         // url must contain the following extentions 
         urlExtensions = /[\.](mp3|ogg|wav|aac)$/,
@@ -19,9 +19,11 @@
 		
        // define formats that browser supports
        isSupported  =  (function() {
+		try { 
          for( var i = 0; i < formats.length; i++) {
           if(audioElement.canPlayType(formats[i]) == "") continue;
             arraySupported.push(formats[i]); }
+		} catch(e) {}
            return arraySupported; })(),
 
        // try to define the current browser
@@ -47,9 +49,9 @@
         seconds = Math.floor( seconds % 60 );
         seconds = seconds >= 10 ? seconds : '0' + seconds;    
             return minutes + ':' + seconds; };
-
-var _smartPlayer = 
-
+			
+ var _smartPlayer = 
+			
   { loadAudio  :  function( url ) {
      if( !urlExtensions.test( url )) newError('url');
       thisObject = smartPlayer;
@@ -71,8 +73,7 @@ var _smartPlayer =
 	   };
 	 },
    playAudio  :  function() {
-   	
-	 this.audioElement.play(); 
+	   this.audioElement.play(); 
   }	   
 }
 
