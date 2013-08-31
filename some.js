@@ -7,7 +7,6 @@
           arraySupported = new Array(),
           playlist = {},
 		  
-		
         // supporting by your browser
         audioSupported = !!audioElement.canPlayType,
 		
