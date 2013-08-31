@@ -48,20 +48,26 @@
         seconds = seconds >= 10 ? seconds : '0' + seconds;    
             return minutes + ':' + seconds; };
 
-var _smartPlayer = {
-
-      loadAudio  :  function( url ) {
-      if( !urlExtensions.test( url )) newError('url');
+var _smartPlayer = 
+  { loadAudio  :  function( url ) {
+     if( !urlExtensions.test( url )) newError('url');
       thisObject = smartPlayer;
        if(audioSupported && arraySupported.length >= 1)  {
          if(startUrl == null) {
            thisObject.defVolume = 0.7;
            thisObject.audioElement = new Audio( url );
            thisObject.audioElement.load();
-           thisObject.audioElement.play();
+           thisObject.audioElement.pause();
            startUrl = url;
-		 }
-	   }
+       }else {
+            thisObject.audioElement.src = url;
+            thisObject.audioElement.load();
+            thisObject.audioElement.pause();
+		 };
+       }else {
+         if(!audioSupported) newError('not');
+         if(arraySupported.length < 1) newError('codec');
+	   };
 	 }
 }
 		  
