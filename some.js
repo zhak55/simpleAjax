@@ -68,7 +68,10 @@ var _smartPlayer =
          if(!audioSupported) newError('not');
          if(arraySupported.length < 1) newError('codec');
 	   };
-	 }
+	 },
+   playAudio  :  function() {
+	   this.audioElement.play(); 
+  }	   
 }
 		  
  window.smartPlayer = _smartPlayer;
