@@ -75,6 +75,25 @@ var _smartPlayer =
 	 this.audioElement.play(); 
   }	   
 }
+
+     // this function shows errors
+     var newError = function( type ) {  
+       switch ( type ) {
+        case 'url' : 
+           alert( 'Your url does not contain audio format extention.' );
+           break;
+        case 'not':
+           alert( 'Your browser does not support HTML 5 Audio.' );
+           break;
+        case 'codec':
+           alert( 'Unsupported codec.' );
+           break;
+       }
+     }
+		  
+ window.smartPlayer = _smartPlayer;
+
+})( window );
 		  
  window.smartPlayer = _smartPlayer;
 
