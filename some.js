@@ -39,7 +39,7 @@
                return { browser : matches[1] || "none", version : matches[2] || "0" };
         },
 		
-		// convert time into normal style
+       // convert time into normal style
        convertedTime  =  function( time ) {  
         var seconds = 0, minutes = 0;
              seconds = Math.floor( time );   minutes = Math.floor( sec / 60 );
@@ -49,6 +49,7 @@
             return minutes + ':' + seconds; };
 
 var _smartPlayer = 
+
   { loadAudio  :  function( url ) {
      if( !urlExtensions.test( url )) newError('url');
       thisObject = smartPlayer;
@@ -70,7 +71,8 @@ var _smartPlayer =
 	   };
 	 },
    playAudio  :  function() {
-	   this.audioElement.play(); 
+   	
+	 this.audioElement.play(); 
   }	   
 }
 		  
