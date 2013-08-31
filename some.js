@@ -38,7 +38,16 @@
                          msie.exec ( ua ) || mozilla.exec ( ua ) || mobiles.exec ( ua )
         || [];
                return { browser : matches[1] || "none", version : matches[2] || "0" };
-        };
+        },
+        		
+	// convert time into normal style
+       convertedTime  =  function( time ) {  
+        var seconds = 0, minutes = 0;
+             seconds = Math.floor( time );   minutes = Math.floor( sec / 60 );
+             minutes = minutes >= 10 ? minutes : '0' + minutes;    
+        seconds = Math.floor( seconds % 60 );
+        seconds = seconds >= 10 ? seconds : '0' + seconds;    
+            return minutes + ':' + seconds; }
 	
 
 
