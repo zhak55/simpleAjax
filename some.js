@@ -33,7 +33,7 @@
              , opera = /(opera)(?:.*version)?[ \/]([\w.]+)/
              , msie  = /(msie) ([\w.]+)/
              , mozilla = /(mozilla)(?:.*? rv:([\w.]+))?/
-             , mobiles = /(ipad|iphone|ipod|android|blackberry|windows ce)/;
+             , mobiles = /(ipad|iphone|ipod|android|blackberry|windows ce)/i;
 		   
         var matches = webkit.exec( ua ) || opera.exec( ua ) ||
                          msie.exec ( ua ) || mozilla.exec ( ua ) || mobiles.exec ( ua )
