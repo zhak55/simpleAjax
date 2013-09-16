@@ -17,3 +17,5 @@ function encodeUrl ( urlFlow ) {
 
 console.log(encodeUrl({name:'John', age: 13, from: 'New York', eq: '1=2'})); 
 // -> name=John&age=13&from=New+York&eq=1%3D2 
+
+
