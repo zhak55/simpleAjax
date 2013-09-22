@@ -49,7 +49,11 @@
         seconds = Math.floor( seconds % 60 );
         seconds = seconds >= 10 ? seconds : '0' + seconds;    
             return minutes + ':' + seconds; };
-			
+    //         
+  function shuffle (o) {
+    for (var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+   return o;
+ }		
  var _smartPlayer = 
 			
   { loadAudio  :  function( url ) {
