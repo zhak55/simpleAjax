@@ -1,3 +1,4 @@
+// without using JQuery
 tips('.targets').create({
         width: 200,
         edgeOffset: 10,
