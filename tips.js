@@ -6,3 +6,6 @@ tips('.targets').create({
         content: 'fromDom',
         float: 'auto'
     });
+// all parameters can be omitted (only for example)
+
+tips('#eg').create();
