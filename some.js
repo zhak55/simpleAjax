@@ -81,21 +81,22 @@
   }	   
 }
 
-     // this function shows errors
+     // to show errors
      var newError = function( type ) {  
        switch ( type ) {
         case 'url' : 
-           alert( 'Your url does not contain audio format extention.' );
+           console.log( 'Your url does not contain audio format extention.' );
            break;
         case 'not':
-           alert( 'Your browser does not support HTML 5 Audio.' );
+          console.log( 'Your browser does not support HTML 5 Audio.' );
            break;
         case 'codec':
-           alert( 'Unsupported codec.' );
+           console.log( 'Unsupported codec.' );
            break;
        }
      }
-		  
+
+ // global export		  
  window.smartPlayer = _smartPlayer;
 
 })( window );
