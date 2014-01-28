@@ -45,7 +45,7 @@ function encodeData(data) {
    }
 return mass.join('&'); 
   };	 
-ajax = {
+ window['ajax'] = {
   get   :   function(url, callback) {
     var $ = _createRequest(); 
       $.open("GET", url);
