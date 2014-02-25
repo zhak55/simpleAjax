@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="main.css"  />
+
+
+<title>Документ без названия</title>
+</head>
+<body>
+	<style type="text/css">body{ background: #9cb85c; }</style>
+<script src="msg.js" type="text/javascript"></script>
+
+<button onclick="$.msgBox({massage: 'We need to buy <b>a new car</b>! It will be faster then previous one', type: 'blackOpacity', text: true, delay: 100})">Try</button>
+<button onclick="$.msgBox({callAfterAlert  : function(){ $.msgBox({massage: 'Finished with type ' + this.type + ' number ' + this.id, type: 'blackOpacity'})}})">Try</button>
+
+<button onclick="$.msgBox({massage: ' The Egyptian pyramids are  <div style=\'\'><img src=\'egypt.png\' width=\'50\' height=\'50\' style=\'float: right;\'> ancient pyramid-shaped masonry structures located in Egypt. There are 138 pyramids discovered in Egypt as of 2008.  </div>', type: 'error'})">Try</button>
+<script type="text/javascript">
+ $(function(){
+ 	$.msgBox.set({ global : { float: 'right' } , massage: 'You are so good!' });
+
+ 	$.msgBox({ type: 'warn', delay: 5000, text: true,
+ 		callAfterAlert  : function( id, type ){ 
+ 			$.msgBox({massage: 'Finished with type <b>' + type + '</b> number ' + id, type: 'success', delay: 1000})
+ 			console.log( this )
+ 		} ,
+ 		callBeforeAlert : function(){ 
+           //alert('before')
+ 			$.msgBox({massage: 'Started!',  type: 'success'})
+ 		}
+
+ 	})
+ });
+</script>
+</body>
+</html>
