@@ -4,7 +4,11 @@ VK.init(function() {
        .filter({city: "Санкт-Петербург"}, null, {token: "title"}).res(function( data ){
        // you get the filtered data
         console.log( this.data.found )     
-      })
+      });
+      
+// Add handlers 
+
+vk.on({"LocationChanged":  completed, "Scroll" : scroll, "WindowFocus": focus});
       
   }, function() { 
 
