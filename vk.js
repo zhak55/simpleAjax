@@ -6,8 +6,8 @@ VK.init(function() {
         console.log( this.data.found )     
       })
       
-  console.log( req )
   }, function() { 
 
+// if something wrong in API
 
 }, vk.latest ); 
