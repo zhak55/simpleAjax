@@ -9,7 +9,12 @@ VK.init(function() {
 // Add handlers 
 
 vk.on({"LocationChanged":  completed, "Scroll" : scroll, "WindowFocus": focus});
-      
+
+// Remove handlers 
+
+vk.off({"LocationChanged":  completed, "Scroll" : scl, "WindowFocus": focus});
+ 
+ 
   }, function() { 
 
 // if something wrong in API
