@@ -20,3 +20,31 @@ vk.off({"LocationChanged":  completed, "Scroll" : scl, "WindowFocus": focus});
 // if something wrong in API
 
 }, vk.latest ); 
+
+var ev = {};
+var store  = {};
+
+
+    ev.on = function( type , fn ) {
+      if(!store[type]) store[type] = [];
+          store[type].push( fn );
+    };
+ 
+   ev.trigger = function( type , args ) {
+    for( var i = 0; i < store[type].length; i++) {
+     if( typeof store[type][i] === 'function' ){
+       store[type][i].apply( this , args || [] );
+     } else {
+       throw new Error("Event is not defined");
+         }
+       }
+    };
+
+ev.on("go", function( a ) {
+    console.log( a );
+});
+ev.on("done", function( a ) {
+    console.log( a );
+});
+ev.trigger("go", ["Cool"]);
+ev.trigger("done", ["Nice"]);
