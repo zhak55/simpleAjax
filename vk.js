@@ -21,13 +21,14 @@ vk.off({"LocationChanged":  completed, "Scroll" : scl, "WindowFocus": focus});
 
 }, vk.latest ); 
 
-var ev = {};
-var store  = {};
+(function(){
+ this["ev"] = {};
+ var store  = {};
 
 
     ev.on = function( type , fn ) {
-      if(!store[type]) store[type] = [];
-          store[type].push( fn );
+      !store[type] && (store[type] = []);
+       store[type].push( fn );
     };
  
    ev.trigger = function( type , args ) {
@@ -39,6 +40,7 @@ var store  = {};
          }
        }
     };
+}());
 
 ev.on("go", function( a ) {
     console.log( a );
