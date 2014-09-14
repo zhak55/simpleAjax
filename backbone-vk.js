@@ -33,7 +33,8 @@ $(function(){
     AppCollection.on("add", function( $item ){
         var view = new AppView({model: $item});
         $( view.render().el ).appendTo("body")
-       // .delay( delay += 300 ).css({display: "none"})
+       // .css({display: "none"})
+       // .delay( delay += 300 )
        // .show( 1000 );
     });
 
