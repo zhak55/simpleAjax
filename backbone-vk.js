@@ -63,4 +63,5 @@ $(function(){
       //console.log( s.response.items )
         AppCollection.add( data.response.items )
     });
+    
 });
