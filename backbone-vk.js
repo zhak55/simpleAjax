@@ -1,4 +1,5 @@
 $(function(){
+   window["alert"]( "hello, world!" ); 
    var delay = 100;
    var BASE_DOMAIN  = "http://vk.com/";
    // to emulate click
