@@ -46,3 +46,16 @@
      }( element ))
   };
 }.call()
+
+// jQuery 
+
+$(function() {
+  var i = 5
+    , DELAY_M = 100;
+    
+    while( i-- ) $("<div></div>")
+      .addClass("cards")
+      .appendTo("body")
+      .delay( i * DELAY_M )
+      .animate({opacity: 1})
+});
