@@ -10,7 +10,7 @@
 
 // http://jsfiddle.net/r4vo1bdn/
 
-//Vanilla JS
+// Vanilla JS:
 
 +function() {
   var $doc = document
