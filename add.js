@@ -26,11 +26,11 @@
                      if( j.toFixed(1) >= 1 ) clearInterval( intalId );
              }, DELAY_M / 4 )
          },
-         append : function() {
-           $doc.body.appendChild( $el ) 
-           return this;
-        }
-      }
+          append : function() {
+            $doc.body.appendChild( $el ) 
+            return this;
+         }
+       }
     };
 
  while ( i-- ) {
