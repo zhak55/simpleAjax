@@ -8,6 +8,9 @@
 //   background-color: green;
 // }
 
+// http://jsfiddle.net/r4vo1bdn/
+
+//Vanilla JS
 
 +function() {
   var $doc = document
