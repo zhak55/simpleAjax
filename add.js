@@ -8,7 +8,6 @@
 //   background-color: green;
 // }
 
-
 +function() {
   var $doc = document
       , i = 5
