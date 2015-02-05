@@ -8,7 +8,7 @@
 //   background-color: green;
 // }
 
-// http://jsfiddle.net/r4vo1bdn/1/
+// http://jsfiddle.net/7q5jdoex/
 
 // Vanilla JS:
 
