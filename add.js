@@ -8,6 +8,7 @@
 //   background-color: green;
 // }
 
+
 +function() {
   var $doc = document
       , i = 5
@@ -18,9 +19,8 @@
            animate : function() {
              var  j = 0
                ,  intalId = setInterval(function() {
-                  if( j >= 1 ) clearInterval( intalId );
-                  j += 0.1;
-                  $el.style.opacity = j;
+                    $el.style.opacity = (j += 0.1);
+                     if( j.toFixed(1) >= 1 ) clearInterval( intalId );
              }, DELAY_M / 4 )
          },
         append : function() {
