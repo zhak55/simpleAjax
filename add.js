@@ -8,7 +8,7 @@
 //   background-color: green;
 // }
 
-// http://jsfiddle.net/r4vo1bdn/
+// http://jsfiddle.net/r4vo1bdn/1/
 
 // Vanilla JS:
 
@@ -26,7 +26,7 @@
                      if( j.toFixed(1) >= 1 ) clearInterval( intalId );
              }, DELAY_M / 4 )
          },
-        append : function() {
+         append : function() {
            $doc.body.appendChild( $el ) 
            return this;
         }
