@@ -26,4 +26,4 @@ var randColor = (function(){
 
 }());
 
-var color = randColor(); // to get random colour
+var color = randColor(); // e.g. to get random colour
