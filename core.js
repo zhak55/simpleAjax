@@ -9,7 +9,7 @@ HTMLGameEngine(function() {
   scene  : "Mario", // the main scene id
   width  : 700,
   height : 500,
-  audio  : function( register ) {
+   audio  : function( register ) {
     register({root : "../music"} , 
     [
       { 
@@ -23,7 +23,25 @@ HTMLGameEngine(function() {
           src : "run.mp3"
        }
      ]);
-   
+   },
+  image   : function( register ) {
+    register({root: "../img", type: "png"}, [
+      { name: "Mario", src: "mario" }
+     ])
+    }
   }
- }
-});
+}).startLoad(["image", "audio"]).
+     notify(function( progress ){
+      console.log("Loaded: " + progress * 100)
+    })
+    .fail(function(object){
+      // object that failed to preload
+    })
+    .done( init_2DGame );
+    
+    
+    function init_2DGame() {
+     
+     
+    };
+    
