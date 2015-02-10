@@ -33,7 +33,7 @@ var $main = new HTMLGameEngine(function() {
 }).startLoad(["image", "audio"]);
 
 // get DOM utils
-var dom = $main.inquiry("DOM");
+var dom = $main.acquire("DOM");
 
 $main
     .notify(function( progress ){
