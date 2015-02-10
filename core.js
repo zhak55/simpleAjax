@@ -4,7 +4,7 @@
  
  // first - init new 2D html game 
  
-window["$main"] = new HTMLGameEngine(function() {
+new HTMLGameEngine(function() {
   return {
      name   : "SuperMario"
      scene  : "Mario", // the main scene id
