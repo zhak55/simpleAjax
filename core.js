@@ -4,7 +4,7 @@
  
  // first - init new 2D html game 
  
-HTMLGameEngine(function() {
+var $main = HTMLGameEngine(function() {
  return {
   scene  : "Mario", // the main scene id
   width  : 700,
@@ -30,8 +30,10 @@ HTMLGameEngine(function() {
      ])
     }
   }
-}).startLoad(["image", "audio"]).
-     notify(function( progress ){
+}).startLoad(["image", "audio"]);
+
+$main
+     .notify(function( progress ){
       console.log("Loaded: " + progress * 100)
     })
     .fail(function(object){
