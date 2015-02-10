@@ -4,7 +4,7 @@
  
  // first - init new 2D html game 
  
-var $main = HTMLGameEngine(function() {
+var $main = new HTMLGameEngine(function() {
  return {
   scene  : "Mario", // the main scene id
   width  : 700,
