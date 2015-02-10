@@ -6,6 +6,7 @@
  
 var $main = new HTMLGameEngine(function() {
  return {
+  name   : "SuperMario"
   scene  : "Mario", // the main scene id
   width  : 700,
   height : 500,
@@ -36,13 +37,13 @@ var $main = new HTMLGameEngine(function() {
 var dom = $main.acquire("DOM");
 
 $main
-    .notify(function( progress ){
-       dom("#preload", {cache: true}).text("Loaded: " + progress * 100)
+    .on("progress", function( progress ){
+       dom("#preload", {cache: true}).text("Loaded: " + progress * 100);
     })
-    .fail(function(object){
+    .on("fail", function( objects ) {
       // object that failed to preload
     })
-    .done( init_2DGame );
+    .on("success", init_2DGame )
     
     
     function init_2DGame() {
