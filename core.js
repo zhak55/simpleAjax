@@ -33,7 +33,7 @@ var $main = new HTMLGameEngine(function() {
 }).startLoad(["image", "audio"]);
 
 $main
-     .notify(function( progress ){
+    .notify(function( progress ){
       console.log("Loaded: " + progress * 100)
     })
     .fail(function(object){
