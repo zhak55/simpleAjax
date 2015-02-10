@@ -10,11 +10,18 @@ HTMLGameEngine(function() {
   width  : 700,
   height : 500,
   audio  : function( register ) {
-    register({src : "../music"} ,
-     [
-      { name: "background", src: "bg.mp3"  } ,
-      { name: "jumping"   , src: "jump.mp3"} ,
-      { name: "runnig"    , src : "run.mp3"}
+    register({src : "../music"} , 
+    [
+      { 
+        name: "background", 
+        src: "bg.mp3"
+      } , { 
+       name: "jumping", 
+       src: "jump.mp3"
+      } , { 
+       name: "runnig", 
+       src : "run.mp3"
+       }
      ]);
    
   }
