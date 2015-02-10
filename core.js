@@ -36,7 +36,8 @@ window["$main"] = new HTMLGameEngine(function() {
 // get DOM utils
 var dom = $main.acquire("DOM");
     // save this node
-    dom("#preload", {cache: true})
+    dom("#preload", {cache: true});
+    
 $main
     .on("progress", function( progress ){
        dom().get("#preload").text("Loaded: " + progress * 100);
