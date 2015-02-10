@@ -32,9 +32,12 @@ var $main = new HTMLGameEngine(function() {
   }
 }).startLoad(["image", "audio"]);
 
+// get DOM utils
+var dom = $main.inquiry("DOM");
+
 $main
     .notify(function( progress ){
-      console.log("Loaded: " + progress * 100)
+       dom("#preload", {cache: true}).text("Loaded: " + progress * 100)
     })
     .fail(function(object){
       // object that failed to preload
