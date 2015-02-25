@@ -1,3 +1,4 @@
+// data for demography pyramid(France)
 window["data"] = {
     "2050": {
         "male": {
