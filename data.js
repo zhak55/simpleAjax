@@ -1,5 +1,4 @@
 // data for demography pyramid(France)
-window["data"] = {
     "2050": {
         "male": {
             "0": 2090,
@@ -1488,4 +1487,3 @@ window["data"] = {
             "20": 16
         }
     }
-};
