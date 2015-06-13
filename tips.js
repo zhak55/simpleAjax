@@ -39,48 +39,48 @@
 }
 
   // public class 
-    class TimeFx extends $Event {
-      constructor() {
-          super();
-          this.__timersList = {};
-          this.__index = 0;
-         }
-       set(over, callback, type, __re) {
-          if(typeof over === 'function') {
-            callback = over;
-            over = 1000;
+  class TimeFx extends $Event {
+   constructor() {
+     super();
+       this.__timersList = {};
+       this.__index = 0;
+      }
+    set(over, callback, type, __re) {
+      if(typeof over === 'function') {
+        callback = over;
+        over = 1000;
+       }
+     let intervalID
+      ,  saveIndex = __re === 0 || __re ? __re : this.__index++;
+         intervalID = self['set' + (type ?
+           'Timeout' : 'Interval')](callback, time(over));
+         this.__timersList[saveIndex] = {
+           id       : intervalID,
+           target   : !!type,
+           isCalling: callback,
+           delay    : over,
+           type     : typeof callback === 'string' 
+              ? 'code' : 'function'
           }
-          let intervalID
-           ,  saveIndex = __re === 0 || __re ? __re : this.__index++;
-          intervalID = self['set' + (type ?
-                'Timeout' : 'Interval')](callback, time(over));
-            this.__timersList[saveIndex] = {
-                 id       : intervalID,
-                 target   : !!type,
-                 isCalling: callback,
-                 delay    : over,
-                 type     : typeof callback === 'string' 
-                   ? 'code' : 'function'
-               }
-            return saveIndex;
-          }
-       stop(id, drop) {
+        return saveIndex;
+      }
+    stop(id, drop) {
+     let __this = this.__timersList[id];
+      self['clear' + (__this.target ?
+        'Timeout' : 'Interval')](__this.id);
+       return this;
+      }
+     run(id) {
+      if( id in this.__timersList ) {
         let __this = this.__timersList[id];
-         self['clear' + (__this.target ?
-                'Timeout' : 'Interval')](__this.id);
-          return this;
+         this.set(
+          __this.delay     ,
+          __this.isCalling ,
+          __this.target    , id
+            )
        }
-       run(id) {
-           if( id in this.__timersList ) {
-             let __this = this.__timersList[id];
-              this.set(
-               __this.delay     ,
-               __this.isCalling ,
-               __this.target    , id
-               )
-           }
-         return this;
-       }
+      return this;
     }
-    this.TimeFx = TimeFx;
+  }
+  this.TimeFx = TimeFx;
 }.call(window);
