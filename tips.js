@@ -1,20 +1,25 @@
-+function(){
+;((root, factory) => {
+    if ( typeof define === 'function' && define.amd ) {
+        // AMD. Register as an anonymous module.
+        define( "TimeFx", [], factory );
+    } else {
+        // Browser globals
+        root.TimeFx = factory();
+    }
+}(this, () => {
   // private methods
   let regexpTime = /([0-9]+)(m)?s?/i;
   let time = function time() {
-  let target = arguments[0] === undefined ? 1000 : arguments[0]
-   ,  type ,  number
-   if (typeof target === 'number') return target;
-    if (typeof target === 'string') {
-      target = target.match(regexpTime);
-      type = target[2];
-      number = type ? +target[1] : +target[1] * 1000;
+    let target = arguments[0] === undefined ? 1000 : arguments[0]
+     ,  type ,  number
+     if (typeof target === 'number') return target;
+      if (typeof target === 'string') {
+       target = target.match(regexpTime);
+       type = target[2];
+       number = type ? +target[1] : +target[1] * 1000;
     } else number = 0;
   return number;
 };
-
-  // save global contex 
-  let self = this;
 
  // ES6: create $Event class 
   class $Event {
@@ -82,5 +87,5 @@
       return this;
     }
   }
-  this.TimeFx = TimeFx;
-}.call(window);
+ return TimeFx;
+}));
