@@ -15,6 +15,7 @@
  # (Intercept)   4.6000     1.2747   3.609  0.00689 **
  # x            -0.1455     0.2054  -0.708  0.49903
  # Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+ #
  # Residual standard error: 1.866 on 8 degrees of freedom
  # Multiple R-squared:  0.05897,   Adjusted R-squared:  -0.05866
  # F-statistic: 0.5013 on 1 and 8 DF,  p-value: 0.499
